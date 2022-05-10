@@ -1,6 +1,6 @@
 from asyncore import read
 import csv
-import yaml
+from yaml import dump
 franchises = dict()
 picks = dict()
 
@@ -43,7 +43,7 @@ def tierPulls(file, tier):
                 "GM":row[4]
             }
     file.close()
-    print(yaml.dump(picks, default_flow_style=False))
+    print(dump(picks, default_flow_style=False))
 
     
 

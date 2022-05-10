@@ -1,4 +1,4 @@
 from dataStructurePullerThingy import franchises, picks
 
-def makeContenderSlides():
+def makeSlides():
     return None
