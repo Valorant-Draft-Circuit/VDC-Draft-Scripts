@@ -12,11 +12,12 @@ def populateFranchises(file):
     header = next(reader)
     for row in reader:
         if row[0] != "":
-            if row[1] in franchises:
-                franchises[row[1]][row[3]] = row[0]
+            if row[2] in franchises:
+                franchises[row[2]][row[3]] = row[0]
             else:
-                franchises[row[1]] = {}
-                franchises[row[1]][row[3]] = row[0]
+                franchises[row[2]] = {}
+                franchises[row[2]]["Franchise"] = row[1]
+                franchises[row[2]][row[3]] = row[0]
 
     file.close()
     #print(franchises)
@@ -43,11 +44,10 @@ def tierPulls(file, tier):
                 "GM":row[4]
             }
     file.close()
-    print(dump(picks, default_flow_style=False))
+    #print(dump(picks, default_flow_style=False))
 
     
 
     return None
 
 
-tierPulls("Season1VDCDraftBoard-BotCommandOutput.csv", "Contender")
